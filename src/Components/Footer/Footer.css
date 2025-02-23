@@ -31,11 +31,13 @@
     flex-direction: column;
     align-items: baseline;
     padding-top: 2vh;
+    text-decoration: none;
   }
   
   .Footer .footer1 .ourservices ul li{
     list-style: none;
     padding-top: 0.9rem;
+    
   }
   
   .Footer .footer1 .explore{
@@ -81,14 +83,21 @@
     font-size: 1rem;
   }
   
-  .Footer .footer1 .letstalk button{
-    width: 50%;
+  .Footer .footer1 .letstalk .button button{
+    width: 150%;
     margin-top: 4vh;
     height: 6vh;
     background-color: aquamarine;
     cursor: pointer;
     border-radius: 5px;
-  
+  }
+
+  .Footer .footer1 .explore ul li a,  .Footer .footer1 .ourservices ul li a, .Footer .footer3 p a{
+    text-decoration: none;
+  }
+
+  .Footer hr{
+    width: 100%;
   }
   
   

@@ -1,0 +1,303 @@
+/* Dashboard.css */
+
+  /* Main Container */
+  .dynamic-contents {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+
+
+  
+
+  
+  
+
+
+  /* Main Content */
+  /*.main-content {
+    flex: 1;
+    background-color: #f9f9f9;
+    padding: 1rem;
+    max-width: 100%;
+  }
+  */
+  .main-content {
+    flex: 1;
+    background-color: #f9f9f9;
+    padding: 2rem;
+    max-width: 100%; /* Prevent overflow */
+    margin-left: 0; /* Reset margin for smaller screens */
+  }
+
+  .main-content .content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .main-content .top-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .main-content .top-section .balance {
+    display: none;
+  }
+  
+  .main-content .top-section h2 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+  }
+  
+  .main-content .top-section i {
+    font-size: 1.2rem;
+    color: #2c3e50;
+    cursor: pointer;
+  }
+  
+  .main-content hr {
+    border: 0;
+    height: 1px;
+    background-color: #ddd;
+    margin: 1rem 0;
+  }
+  
+  .main-content .content {
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .main-content .content .intro {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    align-items: center;
+  }
+  
+  
+
+  .main-content .content .intro .balance {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2rem;
+    min-width: 10rem;
+    border: 1px solid #2980b9;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+  
+  .main-content .content .intro p {
+    font-size: 1.1rem;
+    color: #2c3e50;
+  }
+
+  .main-content .content .intro .balance p {
+    font-size: 1rem;
+    color: #2c3e50;
+  }
+  
+
+
+  
+  /* Offers and Actions Container */
+  .offers-and-actions {
+    display: flex;
+    gap: 20px; /* Space between Offers and Quick Actions */
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 100%; /* Prevent container from exceeding viewport width */
+    overflow: hidden; /* Prevent horizontal overflow */
+  }
+  
+  /* Responsive Layout for Mobile */
+  @media (max-width: 768px) {
+    .offers-and-actions {
+      flex-direction: column; /* Stack on top of each other on mobile */
+    }
+
+     /* Offer Details Section */
+     .offers {
+        flex: 1; /* Take up available space */
+        min-width: 100%; /* Constrain the maximum width of the Offers section */
+        overflow: hidden; /* Prevent horizontal overflow */
+      }
+
+  }
+  
+ /* Offers Section */
+.offers {
+    flex: 1; /* Take up available space */
+    max-width: 70%; /* Constrain the maximum width of the Offers section */
+    overflow: hidden; /* Prevent horizontal overflow */
+  }
+  
+  .offers p {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Offer Details Section */
+  .offer-details {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    gap: 15px; /* Space between cards */
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Individual Offer Card */
+  .offer-card {
+    flex: 0 0 auto; /* Prevent flex shrinking/growing */
+    width: 200px; /* Fixed width for each card */
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .offer-card p {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+  
+  .offer-card button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .offer-card button:hover {
+    background-color: #0056b3;
+  }
+
+  .offer-card .discount {
+    text-decoration: line-through;
+  }
+
+  .offer-card .offer-type-header {
+    color: #0874e0;
+    padding-bottom: 0.5rem;
+  }
+  
+  /* Quick Actions Section */
+  .quick-action {
+    flex: 1;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .quick-action p {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .quick-action a {
+   text-decoration: none;
+  }
+  
+  .quick-action button {
+    display: block;
+    width: 100%;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .quick-action button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Hide Scrollbar for Aesthetic Purposes */
+  .offer-details::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+  }
+  
+  .offer-details {
+    -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+  }
+
+
+
+
+  /* Transactions Table */
+  .main-content .transaction table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+  }
+  
+  .main-content .transaction table caption {
+    font-size: 1.2rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+  }
+  
+  .main-content .transaction table th,
+  .main-content .transaction table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .main-content .transaction table th {
+    background-color: #3498db;
+    color: #ffffff;
+  }
+  
+  .main-content .transaction table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Footer */
+  .footer {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .footer ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .footer ul li a {
+    text-decoration: none;
+    color: #3498db;
+    transition: color 0.3s ease;
+  }
+  
+  .footer ul li a:hover {
+    color: #2980b9;
+  }
+  
+
+

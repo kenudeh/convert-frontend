@@ -1,0 +1,335 @@
+
+
+/* TOP MENU BAR */
+.top-menu-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f8f9fa;
+    position: relative; /* Ensure dropdown is positioned relative to this container */
+  }
+  
+  /* User Icon and Dropdown */
+  .user-icon {
+    position: relative; /* Make the dropdown relative to this container */
+    cursor: pointer;
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    right: 0; /* Align dropdown to the right of the user icon */
+    top: 100%; /* Position dropdown below the user icon */
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    z-index: 1000; /* Ensure dropdown appears above other elements */
+    display: flex;
+    flex-direction: column; /* Display dropdown items vertically */
+    gap: 10px; /* Add spacing between dropdown items */
+    min-width: 5rem;
+    min-height: 5rem;
+  }
+
+  .dropdown-menu a {
+    margin-bottom: 15px;
+    text-decoration: none;
+  }
+
+  .dropdown-menu button {
+    padding: 3px;
+    border-radius: 5px;
+    background: red;
+  }
+
+  .dropdown-menu span {
+    color: white;
+    font-size: small;
+  }
+  
+
+
+  /* Hamburger Icon and Mobile Menu */
+  .hamburger-icon {
+    cursor: pointer;
+  }
+  
+  .mobile-menu {
+    position: fixed; /* Fix the mobile menu to the viewport */
+    top: 60px; /* Position below the top menu bar */
+    right: 0px;
+    background-color: #f8f9fa;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Add spacing between menu items */
+    z-index: 999; /* Ensure mobile menu appears above other content */
+    display: none; /* Hide mobile menu by default */
+    align-items: center;
+    height: 50vh;
+    width: 40vw;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mobile-menu.open {
+    display: flex; /* Show mobile menu when isMenuOpen is true */
+  }
+
+  .mobile-menu a {
+    text-decoration: none;
+  }
+
+
+
+  .icons {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 1rem;
+    padding-right: 2vw;
+  }
+  
+  /* Hide mobile menu on desktop */
+  @media (min-width: 1024px) {
+    .top-menu-bar {
+      display: none !important;
+    }
+  }
+
+
+  /*EXTRAS*/
+  /* Top Menu Bar (Mobile Only) */
+  .top-menu-bar {
+    display: none; /* Hidden by default for desktop */
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .top-menu-bar .logo p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+  }
+  
+  .top-menu-icons {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .top-menu-icons i {
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #2c3e50;
+  }
+
+  .top-menu-bar img {
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;
+  }
+
+
+
+
+
+
+
+  /* SIDE MENU BAR (Desktop and Tablet) */
+
+  .side-menu {
+    width: 250px;
+    background-color: #ffffff;
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    transition: transform 0.3s ease;
+    min-height: 100vh;
+  }
+  
+
+  .side-menu .logo img {
+    height: 50px;
+    width: 50px;
+    border-radius: 10px;
+  }
+  
+  .side-menu .menu-items {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    margin-top: 5rem;
+    min-height: 50vh;
+  }
+
+  .side-menu .menu-items ul {
+    list-style: none;
+    margin-top: 2rem;
+  }
+  
+  .side-menu .menu-items ul li {
+    padding: 0.75rem 1rem;
+    margin: 0.5rem 0;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #2c3e50;
+    transition: background-color 0.3s ease;
+  }
+  
+  .side-menu .menu-items ul li:hover {
+    background-color: #3498db;
+    color: #ffffff;
+  }
+  
+  .side-menu .menu-items ul li i {
+    margin-right: 0.5rem;
+  }
+  
+  .side-menu .support {
+    margin-top: 20vh;
+  }
+  .side-menu .support p {
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #2c3e50;
+    transition: background-color 0.3s ease;
+  }
+  .side-menu .support a {
+    text-decoration: none;
+  }
+  
+  .side-menu .support p:hover {
+    background-color: #3498db;
+    color: #ffffff;
+  }
+  
+  ul a {
+    text-decoration: none;
+  }
+
+
+  
+
+  /* EXTRAS */
+
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .dynamic-contents {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .top-menu-bar {
+      display: flex; /* Show top menu bar on mobile */
+    }
+  
+    .side-menu {
+        display: none;
+      position: fixed;
+      top: 0;
+      left: -250px;
+      height: 100vh;
+      z-index: 1000;
+      background-color: #ffffff;
+    }
+  
+    .side-menu.open {
+      left: 0;
+    }
+  
+    .main-content {
+      margin-left: 0;
+    }
+
+    .main-content .top-section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .main-content .top-section .balance {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 2rem;
+        min-width: 10rem;
+        border: 1px solid #2980b9;
+        border-radius: 10px;
+    }
+
+    .main-content .top-section i {
+        display: none;
+      }
+
+      .main-content .content .intro .balance {
+        display: none;
+      }
+  }
+
+
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .dynamic-contents {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .top-menu-bar {
+      display: flex; /* Show top menu bar on mobile */
+    }
+  
+    .side-menu {
+        display: none;
+      position: fixed;
+      top: 0;
+      left: -250px;
+      height: 100vh;
+      z-index: 1000;
+      background-color: #ffffff;
+    }
+  
+    .side-menu.open {
+      left: 0;
+    }
+  
+    .main-content {
+      margin-left: 0;
+    }
+
+    .main-content .top-section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .main-content .top-section .balance {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 2rem;
+        min-width: 10rem;
+        border: 1px solid #2980b9;
+        border-radius: 10px;
+    }
+
+    .main-content .top-section i {
+        display: none;
+      }
+
+      .main-content .content .intro .balance {
+        display: none;
+      }
+
+  }
+
+  /* Adjust for Side Menu on Desktop */
+  @media (min-width: 1025px) {
+    .main-content {
+      max-width: calc(100% - 250px); /* Prevent overflow */
+    }
+}

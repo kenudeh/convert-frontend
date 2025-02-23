@@ -1,31 +1,81 @@
-import Footer from './Components/Footer/Footer';
-import Content from './Content';
-import NavBar from './Components/NavBar/NavBar';
-import { Helmet } from 'react-helmet';
+import './index.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
+
+import Homepage from './Components/Pages/Homepage';
+import Services from './Components/Pages/Services';
+import SellAirtime from './Components/Pages/SellAirtime';
+import BuyAirtime from './Components/Pages/BuyAirtime';
+import BuyData from './Components/Pages/BuyData';
+import BillPayment from './Components/Pages/BillPayment';
+import Contact from './Components/Pages/Contact';
+import About from './Components/Pages/About';
+import Blog from './Components/Pages/Blog';
+import SignUp from './Components/Pages/LoginAndSignup/Signup';
+import Login from './Components/Pages/LoginAndSignup/Login';
+import TermsOfService from './Components/Footer/TermsOfService';
+import FAQ from './Components/Footer/FAQ';
+import Privacy from './Components/Footer/Privacy';
+import NotFound from './Components/Pages/NotFound';
+
+//Dashboard components
+import Dashboard from './Components/Dashboard/Dashboard';
+import AirtimeBuy from './Components/Dashboard/AirtimeBuy';
+import DataBuy from './Components/Dashboard/DataBuy';
+import AirtimeSell from './Components/Dashboard/AirtimeSell';
+import Wallet from './Components/Dashboard/Wallet';
+import Tickets from './Components/Dashboard/Tickets';
+import Profile from './Components/Dashboard/Profile';
 
 
 
 
 function App() {
   return (
-    <main className="App">
-      <Helmet>
-      <title>Your Website Title</title>
-        <meta name="description" content="The premier airtime-to-cash conversion app in Nigeria" />
-        <meta name="keywords" content="airtime, recharge card, credit, airtime to cash, sell airtime, buy data, buy airtime" />
-        <meta property="og:title" content="Seamless airtime to cash conversion" />
-        <meta property="og:description" content="Nigeria's premier airtime to cash convertion platform" />
-        <meta property="og:image" content="/images/logo.png" />
-        <meta property="og:url" content="https://www.convert.com.ng/" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Seamless airtime to cash conversion" />
-        <meta name="twitter:description" content="Nigeria's premier airtime to cash convertion platform" />
-        <meta name="twitter:image" content="/images/logo.png" />
-      </Helmet>
-      <NavBar />
-      <Content />
-      <Footer />
-    </main>
+    <HelmetProvider>
+      <Router> 
+        <main className="App">
+          {/* Routes */}
+          <div className='content'>
+            <Routes>
+              {/* Homepage */}
+              <Route path='/' element={<Homepage />} />
+
+              {/* Services and its Sub-Pages */}
+              <Route path='/services' element={<Services />}>
+                <Route path='sell-airtime' element={<SellAirtime />} />
+                <Route path='buy-airtime' element={<BuyAirtime />} />
+                <Route path='buy-data' element={<BuyData />} />
+                <Route path='bill-payment' element={<BillPayment />} />
+              </Route>
+
+              {/* Other Pages */}
+              <Route path='/contact' element={<Contact />} />
+              <Route path='/about' element={<About />} />
+              <Route path='/dashboard' element={<Dashboard />} />
+              <Route path='/signup' element={<SignUp />} />
+              <Route path='/login' element={<Login />} />
+              <Route path='/blog' element={<Blog />} />
+              <Route path='/terms-of-service' element={<TermsOfService />} />
+              <Route path='/faqs' element={<FAQ />} />
+              <Route path='/privacy' element={<Privacy />} />
+              <Route path='*' element={<NotFound />} />
+
+              {/*Dashboard and its pages*/}
+              <Route path='/sell-airtime' element={<AirtimeSell />} />
+              <Route path='/buy-airtime' element={<AirtimeBuy />} />
+              <Route path='buy-data' element={<DataBuy />} />
+              <Route path='/wallet' element={<Wallet />} />
+              <Route path='/support' element={<Tickets />} />
+              <Route path='/profile' element={<Profile />} />
+      
+
+            </Routes>
+          </div>
+
+        </main>
+      </Router>
+    </HelmetProvider>
   );
 }
 
