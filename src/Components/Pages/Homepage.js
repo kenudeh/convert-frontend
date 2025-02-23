@@ -20,12 +20,12 @@ const Homepage = () =>{
 				<meta name="twitter:description" content="Nigeria's premier airtime to cash convertion platform" />
 				<meta name="twitter:image" content="/images/logo.png" />
 			</Helmet>
-			<NavBar />
+			<Navbar />
 			<section className="Hero">
 				<div className="Hero-content">
-					<h1 className="Hero-heading">Convert Airtime to Cash in No Time</h1>
-					<p className="Hero-subheading">We buy MTN and Airtel airtimes at the best possible rates! </p>
-					<a href="/sell-airtime"><button className="cta-button"><span style={{fontSize:"1.1rem"}}>Get Started</span></button></a>
+					<h1 className="Hero-heading">Get Ready to Convert Airtime to Cash in No Time!</h1>
+					<p className="Hero-subheading">We'll buy MTN and Airtel airtimes at the best possible rates </p>
+					<a href="/home"><button className="cta-button"><span style={{fontSize:"1.1rem"}}>Get Started</span></button></a>
 				</div>								
 			</section>
 			<Footer />
