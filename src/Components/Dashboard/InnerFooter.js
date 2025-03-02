@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import './Dashboard.css';
+import './Styles/Base.css';
 
 const InnerFooter = () => {
     return(

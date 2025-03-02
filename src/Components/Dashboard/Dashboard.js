@@ -1,17 +1,14 @@
 import React, {useEffect, useState } from 'react';
-import './Dashboard.css';
+import './Styles/Base.css';
 import { Link } from 'react-router-dom';
 import TopMenuBar from './TopMenuBar';
 import InnerFooter from './InnerFooter';
+import SideMenuBar from './SideMenuBar';
+import UserIcon from './UserIcon';
 
 
 
 const Dashboard = () => {
-  // State to manage the visibility of the full navigation menu
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-
-
 
   //Fetching API data
   const [offers, setOffers] = useState([])  // State to store the offers data
@@ -102,30 +99,13 @@ const Dashboard = () => {
       <TopMenuBar />
       
       {/* Side Menu (Desktop and Tablet) */}
-      <article className={`side-menu ${isMenuOpen ? 'open' : ''}`}>
-        <section className='logo'>
-          <p>Logo</p>
-        </section>
-        <section className='menu-items'>
-          <ul>
-            <Link to='/dashboard'><li><i className='fas fa-home'></i>Dashboard</li></Link>
-            <Link to='/sell-airtime'><li><i className='fas fa-money-bill'></i>Sell airtime</li></Link>
-            <Link to='/buy-airtime'><li><i className='fas fa-shopping-cart'></i>Buy airtime</li></Link>
-            <Link to='/buy-data'><li><i className='fas fa-database'></i>Buy data</li></Link>
-            <Link to='/wallet'><li><i className='fas fa-wallet'></i>Wallet</li></Link>
-          </ul>
-        </section>
-
-        <section className='support'>
-          <Link to='/support'><p><i className='fas fa-life-ring'></i>Support</p></Link>
-        </section>
-      </article>
+      <SideMenuBar />
 
       {/* Main Content */}
       <article className='main-content'>
         <section className='top-section'>
           <h2>Dashboard</h2>
-          <i className='fas fa-user' />
+          <UserIcon />
           <section className='balance'>
             <p>Balance: ₦0.00</p>
           </section>

@@ -1,7 +1,7 @@
 import logo from './../../Images/logo.png';
 import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
-import './MenuBar.css';
+import './Styles/MenuBar.css';
 
 
 const SideMenuBar = () => {

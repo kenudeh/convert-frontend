@@ -26,6 +26,9 @@ import AirtimeSell from './Components/Dashboard/AirtimeSell';
 import Wallet from './Components/Dashboard/Wallet';
 import Tickets from './Components/Dashboard/Tickets';
 import Profile from './Components/Dashboard/Profile';
+import Deposit from './Components/Dashboard/Deposit';
+import Withdrawal from './Components/Dashboard/Withdrawal';
+
 
 
 
@@ -68,6 +71,8 @@ function App() {
               <Route path='/wallet' element={<Wallet />} />
               <Route path='/support' element={<Tickets />} />
               <Route path='/profile' element={<Profile />} />
+              <Route path='/withdrawal' element={<Withdrawal />} />
+              <Route path='/deposit' element={<Deposit />} />
       
 
             </Routes>
